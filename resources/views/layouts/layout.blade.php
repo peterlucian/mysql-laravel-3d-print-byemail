@@ -197,7 +197,7 @@
 
             <li class="menu-category">
                 <a href="/dashboard" class="menu-title">Dashboard</a>
-                <a href="/save" class="menu-title">Publicar item</a>
+                <a href="{{route('items.create')}}" class="menu-title">Publicar item</a>
             </li>
 
 
@@ -644,7 +644,7 @@
                         </li>
 
                         <li class="sidebar-submenu-category">
-                        <a href="/save" class="sidebar-submenu-title">
+                        <a href="{{route('items.create')}}" class="sidebar-submenu-title">
                             <p class="product-name">Publicar item</p>
                         </a>
                         </li>
@@ -663,6 +663,13 @@
                 </div>
 
             </div>
+
+                @if (session('success'))
+                    <div class="container alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 @yield("content")
             </div>
         </div>

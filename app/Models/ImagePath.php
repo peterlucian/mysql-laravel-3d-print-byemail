@@ -9,4 +9,6 @@ class ImagePath extends Model
 {
     /** @use HasFactory<\Database\Factories\ImagePathFactory> */
     use HasFactory;
+    protected $fillable = ['image_resource_path', 'item_id'];
+
 }
