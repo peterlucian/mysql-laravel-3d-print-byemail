@@ -1,6 +1,9 @@
 'use strict';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31eb1f43484d50de2734d2bd1eedd172e171bfab
 // mobile menu variables
 const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
 const mobileMenu = document.querySelectorAll('[data-mobile-menu]');
