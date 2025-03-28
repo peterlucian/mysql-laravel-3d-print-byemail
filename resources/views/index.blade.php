@@ -243,7 +243,7 @@
 
                     <div class="showcase-content">
 
-                    <a href="#" class="showcase-category">{{$item->name}}</a>
+                    <a href="{{route('items.show', [$item])}}" class="showcase-category">{{$item->name}}</a>
 
                     <a href="#">
                         <h3 class="showcase-title">{{$item->description}}</h3>

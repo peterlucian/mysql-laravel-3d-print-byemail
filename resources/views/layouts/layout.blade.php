@@ -22,6 +22,14 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+    <style>
+        .carousel-container { width: 100%; max-width: 600px; margin: auto; overflow: hidden; position: relative; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .carousel { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel img { width: 100%; flex-shrink: 0; }
+        .buttons { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); }
+        .buttons button { background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; font-size: 18px; }
+    </style>
+
     <!--
         - google font link
     -->
@@ -655,11 +663,6 @@
 
 
                 </ul>
-
-
-
-
-
                 </div>
 
             </div>
@@ -814,18 +817,29 @@
 
     </footer>
 
-  <!--
-    - custom js link
-  -->
-  {{-- <script src="/assets/js/script.js" type="module"></script> --}}
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--
+        - custom js link
+    -->
+    {{-- <script src="/assets/js/script.js" type="module"></script> --}}
 
 
+    <!--
+        - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll(".carousel img");
+        const carousel = document.querySelector(".carousel");
+        function showSlide(i) {
+            index = (i + images.length) % images.length;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+        function prevSlide() { showSlide(index - 1); }
+        function nextSlide() { showSlide(index + 1); }
+    </script>
 
 
 </body>

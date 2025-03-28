@@ -85,7 +85,9 @@ class ItemController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $item = $this->itemModel->findOrFail($id);
+        $item_images = ImagePath::where("item_id","=", $item->id)->get();
+        return view('show', ["item" => $item,"item_images" => $item_images]);
     }
 
     /**
